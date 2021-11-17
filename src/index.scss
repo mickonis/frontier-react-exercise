@@ -1,2 +1,8 @@
 @import '~normalize.css/normalize.css';
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;500;700&display=swap');
+
+:root {
+  --fieldBackgroundColor: #f1f4f6;
+  --fieldBorderColor: #c4cace;
+  --errorColor: #e71111;
+}

@@ -32,9 +32,8 @@ const Form = ({ job }: FormProps) => {
     return (
       <>
         <div id={section.id} className="form-section">
-          {section.title}
+          {section.content.map(content => renderContent(content))}
         </div>
-        {section.content.map(content => renderContent(content))}
       </>
     );
   };
@@ -55,9 +54,9 @@ const Form = ({ job }: FormProps) => {
 
   return (
     <div className="form">
+      {/* {step} */}
       <div className="form__body">
-        <h3>{activeSection.title}</h3>
-        {step}
+        <h3 className="form__title">{activeSection.title}</h3>
         <form action="">
           {renderSection(activeSection)}
           <button

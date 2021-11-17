@@ -1,0 +1,17 @@
+.input {
+  $self: &;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  #{$self}--error {
+    .input__field {
+      border-color: var(--errorColor);
+    }
+  }
+  &__field {
+    background: var(--fieldBackgroundColor);
+    height: 35px;
+    border: 1px solid var(--fieldBorderColor);
+    border-radius: 4px;
+  }
+}

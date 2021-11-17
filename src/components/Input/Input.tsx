@@ -1,3 +1,4 @@
+import classNames from 'classnames';
 import FieldError from 'components/FieldError/FieldError';
 import Label from 'components/Label/Label';
 import { Control, Controller } from 'react-hook-form';
@@ -18,7 +19,7 @@ const Input = ({
   control,
   error,
 }: Form) => (
-  <div className="input">
+  <div className={classNames('input', { 'input--error': error })}>
     <Label htmlFor={id} text={question_text} />
     <Controller
       control={control}
