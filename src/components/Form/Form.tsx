@@ -25,6 +25,27 @@ const Form = ({ job }: FormProps) => {
 
   console.log('form:', watch());
 
+  const renderSection = (section: Frontier.Section) => {
+    return (
+      <>
+        <div id={section.id} className="form-section">
+          {section.title}
+        </div>
+        {section.content.map(content => renderContent(content))}
+      </>
+    );
+  };
+
+  const renderContent = (content: Frontier.Element) => {
+    return (
+      <div className="form-section__content" key={content.id}>
+        {content.type === 'text' && (
+          <Input content={content} control={control} />
+        )}
+      </div>
+    );
+  };
+
   const activeSection = sections[step];
 
   return (
@@ -32,15 +53,7 @@ const Form = ({ job }: FormProps) => {
       <div className="form__body">
         {step}
         <form action="">
-          <>
-            <div className="form-section">{activeSection.title}</div>
-            {activeSection.content.map(content => (
-              <div className="form-section__content">
-                <Input content={content} control={control} />
-              </div>
-            ))}
-          </>
-
+          {renderSection(activeSection)}
           <button
             onClick={e => {
               e.preventDefault();
