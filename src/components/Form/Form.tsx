@@ -24,6 +24,8 @@ const Form = ({ job }: FormProps) => {
 
     const validationSchema1 = sections;
 
+    const schemaTypes = {};
+
     const properties = fields.reduce((acc, cur) => {
       const {
         metadata: { required },
@@ -75,10 +77,12 @@ const Form = ({ job }: FormProps) => {
   };
 
   const renderContent = (content: Frontier.Element) => {
+    const error = errors[content.id]?.message;
+    console.log('error', error);
     return (
       <div className="form-section__content" key={content.id}>
         {content.type === 'text' && (
-          <Input content={content} control={control} errors={errors} />
+          <Input content={content} control={control} error={error} />
         )}
       </div>
     );
