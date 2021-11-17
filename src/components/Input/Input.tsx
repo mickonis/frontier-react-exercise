@@ -1,11 +1,12 @@
+import FieldError from 'components/FieldError/FieldError';
 import Label from 'components/Label/Label';
-import { Control, Controller, FieldErrors } from 'react-hook-form';
+import { Control, Controller } from 'react-hook-form';
 import './Input.scss';
 
 interface Form {
   content: Frontier.Element;
   control: Control;
-  errors: FieldErrors;
+  error?: string | null;
 }
 
 const Input = ({
@@ -15,6 +16,7 @@ const Input = ({
     metadata: { placeholder, format, step },
   },
   control,
+  error,
 }: Form) => (
   <div className="input">
     <Label htmlFor={id} text={question_text} />
@@ -33,6 +35,7 @@ const Input = ({
         />
       )}
     />
+    {error && <FieldError text={error} />}
   </div>
 );
 
