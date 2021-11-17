@@ -9,7 +9,7 @@ interface Form {
 
 const Input = ({ content, control }: Form) => (
   <div className="input">
-    <Label text={content.question_text} />
+    <Label htmlFor={content.id} text={content.question_text} />
     <Controller
       control={control}
       name={content.id}
@@ -18,7 +18,7 @@ const Input = ({ content, control }: Form) => (
           id={content.id}
           onChange={e => onChange(e.target.value)}
           value={value}
-          type="text"
+          type={content.metadata.format}
           className="input__field"
         />
       )}
