@@ -6,12 +6,23 @@ interface FormProps {
 }
 
 const Form = ({ job }: FormProps) => {
-  console.log(job);
+  const { sections } = job;
+  console.log(sections);
 
   return (
     <div className="form">
       <div className="form__body">
         <form action="">
+          {sections.map(section => (
+            <>
+              <div className="form-section">{section.title}</div>
+              {section.content.map(content => (
+                <div className="form-section__content">
+                  {content.question_text}
+                </div>
+              ))}
+            </>
+          ))}
           <Input />
         </form>
       </div>
