@@ -1,5 +1,11 @@
+import PhoneMockup from './PhoneMockup/PhoneMockup';
+
 function App() {
-  return <div></div>;
+  return (
+    <div>
+      <PhoneMockup />
+    </div>
+  );
 }
 
 export default App;
