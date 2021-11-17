@@ -1,8 +1,8 @@
-import PhoneMockup from './PhoneMockup/PhoneMockup';
+import PhoneMockup from '../PhoneMockup/PhoneMockup';
 
 function App() {
   return (
-    <div>
+    <div className="app">
       <PhoneMockup />
     </div>
   );
