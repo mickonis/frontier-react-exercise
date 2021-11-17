@@ -1,10 +1,11 @@
 import Form from 'components/Form/Form';
+import formInstructions from 'data/form_instructions.json';
 import './PhoneMockup.scss';
 
 const PhoneMockup = () => (
   <div className="phone-mockup">
     <div className="phone-mockup__content">
-      <Form />
+      <Form job={formInstructions as Frontier.Job} />
     </div>
   </div>
 );
