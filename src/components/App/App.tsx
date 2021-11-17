@@ -1,4 +1,4 @@
-import PhoneMockup from '../PhoneMockup/PhoneMockup';
+import PhoneMockup from 'components/PhoneMockup/PhoneMockup';
 import './App.scss';
 
 function App() {
