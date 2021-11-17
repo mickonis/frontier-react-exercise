@@ -7,18 +7,27 @@ interface Form {
   control: Control;
 }
 
-const Input = ({ content, control }: Form) => (
+const Input = ({
+  content: {
+    id,
+    question_text,
+    metadata: { placeholder, format, step },
+  },
+  control,
+}: Form) => (
   <div className="input">
-    <Label htmlFor={content.id} text={content.question_text} />
+    <Label htmlFor={id} text={question_text} />
     <Controller
       control={control}
-      name={content.id}
+      name={id}
       render={({ field: { onChange, value } }) => (
         <input
-          id={content.id}
+          id={id}
           onChange={e => onChange(e.target.value)}
           value={value}
-          type={content.metadata.format}
+          placeholder={placeholder}
+          type={format}
+          step={step}
           className="input__field"
         />
       )}
