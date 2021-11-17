@@ -1,3 +1,4 @@
+import Label from 'components/Label/Label';
 import { Control, Controller } from 'react-hook-form';
 import './Input.scss';
 
@@ -8,7 +9,7 @@ interface Form {
 
 const Input = ({ content, control }: Form) => (
   <div className="input">
-    {content.question_text}
+    <Label text={content.question_text} />
     <Controller
       control={control}
       name={content.id}
