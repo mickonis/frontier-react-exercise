@@ -1,0 +1,26 @@
+.switch {
+  $self: &;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--marginBottomField);
+  &__container {
+    display: flex;
+  }
+  &__label {
+    height: var(--fieldHeight);
+    background: var(--fieldBackgroundColor);
+    border: var(--fieldBorderSize) solid var(--fieldBorderColor);
+    border-radius: var(--fieldBorderRadius);
+    width: 50%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__field {
+    display: none;
+    &:checked + #{$self}__label {
+      background: grey;
+    }
+  }
+}
