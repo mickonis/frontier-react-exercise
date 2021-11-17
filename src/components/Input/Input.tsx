@@ -4,7 +4,7 @@ import Label from 'components/Label/Label';
 import { Control, Controller } from 'react-hook-form';
 import './Input.scss';
 
-interface Form {
+interface InputProps {
   content: Frontier.Element;
   control: Control;
   error?: string | null;
@@ -18,7 +18,7 @@ const Input = ({
   },
   control,
   error,
-}: Form) => (
+}: InputProps) => (
   <div className={classNames('input', { 'input--error': error })}>
     <Label htmlFor={id} text={question_text} />
     <Controller

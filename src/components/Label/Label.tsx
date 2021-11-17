@@ -2,7 +2,7 @@ import './Label.scss';
 
 interface LabelProps {
   text: string;
-  htmlFor: string;
+  htmlFor?: string;
 }
 
 const Label = ({ text, htmlFor }: LabelProps) => (
