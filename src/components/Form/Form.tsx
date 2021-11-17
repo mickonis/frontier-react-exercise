@@ -1,8 +1,8 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import Input from 'components/Input/Input';
+import { generateValidationSchema } from 'helpers/form';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
-import { buildYup } from 'schema-to-yup';
 import './Form.scss';
 
 interface FormProps {
@@ -12,43 +12,6 @@ interface FormProps {
 const Form = ({ job }: FormProps) => {
   const { sections } = job;
   const [step, setStep] = useState(0);
-  console.log(sections);
-
-  const getAllFieldsFromSections = (sections: Frontier.Section[]) =>
-    sections.map(section => section.content).flat();
-
-  const generateValidationSchema = (sections: Frontier.Section[]) => {
-    const fields = getAllFieldsFromSections(sections);
-
-    console.log('fields', fields);
-
-    const validationSchema1 = sections;
-
-    const schemaTypes = {};
-
-    const properties = fields.reduce((acc, cur) => {
-      const {
-        metadata: { required },
-      } = cur;
-      console.log('cur', cur);
-      return { ...acc, [cur.id]: { required, type: 'string' } };
-    }, {});
-
-    console.log('properties', properties);
-
-    const message = {
-      title: 'users',
-      type: 'object',
-      properties,
-      // properties: {
-      //   fullname: { type: 'string', required: true },
-      // },
-    };
-
-    const yupSchema = buildYup(message, {});
-
-    return yupSchema;
-  };
 
   const {
     control,
