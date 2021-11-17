@@ -1,4 +1,5 @@
 import Input from 'components/Input/Input';
+import { useForm } from 'react-hook-form';
 import './Form.scss';
 
 interface FormProps {
@@ -9,6 +10,19 @@ const Form = ({ job }: FormProps) => {
   const { sections } = job;
   console.log(sections);
 
+  const {
+    control,
+    //handleSubmit,
+    //reset,
+    watch,
+    //formState: { errors, dirtyFields }
+  } = useForm({
+    reValidateMode: 'onChange',
+    //resolver: yupResolver(validationSchema)
+  });
+
+  console.log('form:', watch());
+
   return (
     <div className="form">
       <div className="form__body">
@@ -18,12 +32,11 @@ const Form = ({ job }: FormProps) => {
               <div className="form-section">{section.title}</div>
               {section.content.map(content => (
                 <div className="form-section__content">
-                  {content.question_text}
+                  <Input content={content} control={control} />
                 </div>
               ))}
             </>
           ))}
-          <Input />
         </form>
       </div>
     </div>
