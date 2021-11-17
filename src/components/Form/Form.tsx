@@ -56,6 +56,7 @@ const Form = ({ job }: FormProps) => {
   return (
     <div className="form">
       <div className="form__body">
+        <h3>{activeSection.title}</h3>
         {step}
         <form action="">
           {renderSection(activeSection)}
