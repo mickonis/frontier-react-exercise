@@ -1,10 +1,11 @@
 import Label from 'components/Label/Label';
-import { Control, Controller } from 'react-hook-form';
+import { Control, Controller, FieldErrors } from 'react-hook-form';
 import './Input.scss';
 
 interface Form {
   content: Frontier.Element;
   control: Control;
+  errors: FieldErrors;
 }
 
 const Input = ({
