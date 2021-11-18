@@ -29,7 +29,7 @@ const Switch = ({
           <input
             name={id}
             id="yes"
-            onChange={e => onChange(e.target.value)}
+            onChange={e => onChange(true)}
             value="yes"
             placeholder={placeholder}
             type="radio"
@@ -41,7 +41,7 @@ const Switch = ({
           <input
             name={id}
             id="no"
-            onChange={e => onChange(e.target.value)}
+            onChange={e => onChange(false)}
             value="no"
             placeholder={placeholder}
             type="radio"
