@@ -15,24 +15,38 @@ interface FormProps {
 }
 
 const Form = ({ job }: FormProps) => {
-  const { currentStep, setCurrentStep, formInstructions } =
+  const { currentStep, totalSteps, setCurrentStep, formInstructions } =
     useContext(FormContext);
   const sections = formInstructions?.sections as Frontier.Section[];
 
+  const activeSection = sections[currentStep];
+
   const {
     control,
-    //handleSubmit,
+    handleSubmit,
     //reset,
     watch,
     formState: { errors },
   } = useForm({
     mode: 'onChange',
     reValidateMode: 'onChange',
-    resolver: yupResolver(generateValidationSchema(sections)),
+    resolver: yupResolver(generateValidationSchema(activeSection)),
   });
 
   console.log('form:', watch());
   console.log('errors', errors);
+
+  const onSubmit = (formData: any) => {
+    //event.preventDefault();
+    console.log('currentStep', currentStep);
+    console.log('totalSteps', totalSteps);
+
+    if (currentStep < totalSteps) {
+      setCurrentStep(currentStep + 1);
+    } else {
+      console.log('formData', formData);
+    }
+  };
 
   const renderSection = (section: Frontier.Section) => {
     return (
@@ -64,22 +78,13 @@ const Form = ({ job }: FormProps) => {
     );
   };
 
-  const activeSection = sections[currentStep];
-
   return (
     <form className="form">
       <div className="form__body">
         <h3 className="form__title">{activeSection.title}</h3>
         {renderSection(activeSection)}
       </div>
-      <Button
-        onClick={event => {
-          event.preventDefault();
-          setCurrentStep(currentStep + 1);
-        }}
-      >
-        Next
-      </Button>
+      <Button onClick={handleSubmit(onSubmit)}>Next</Button>
     </form>
   );
 };
