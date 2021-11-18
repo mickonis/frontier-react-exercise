@@ -67,9 +67,20 @@ const Form = () => {
         <h3 className="form__title">{activeSection.title}</h3>
         {renderFormSection(activeSection)}
       </div>
-      <Button disabled={buttonDisabled} onClick={handleSubmit(onSubmit)}>
-        {isLastStep ? 'Submit' : 'Next'}
-      </Button>
+      <div className="form__buttons">
+        {currentStep !== 1 && (
+          <Button
+            secondary
+            disabled={buttonDisabled}
+            onClick={() => setCurrentStep(currentStep - 1)}
+          >
+            Back
+          </Button>
+        )}
+        <Button disabled={buttonDisabled} onClick={handleSubmit(onSubmit)}>
+          {isLastStep ? 'Submit' : 'Next'}
+        </Button>
+      </div>
     </form>
   );
 };

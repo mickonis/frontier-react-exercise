@@ -20,4 +20,13 @@
       margin-bottom: 0;
     }
   }
+  &__buttons {
+    display: flex;
+    > * {
+      margin-right: var(--space-m);
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
 }

@@ -18,6 +18,9 @@
     -ms-user-select: none;
     user-select: none;
   }
+  &--secondary {
+    background: var(--secondary-color);
+  }
   &:hover {
     transform: scale(var(--button-hover-scale));
   }

@@ -5,13 +5,17 @@ import './Button.scss';
 interface ButtonProps {
   children: ReactNode;
   disabled?: boolean;
+  secondary?: boolean;
   onClick: (event: SyntheticEvent) => void;
 }
 
-const Button = ({ children, disabled, onClick }: ButtonProps) => (
+const Button = ({ children, disabled, secondary, onClick }: ButtonProps) => (
   <button
     onClick={onClick}
-    className={classNames('button', { 'button--disabled': disabled })}
+    className={classNames('button', {
+      'button--disabled': disabled,
+      'button--secondary': secondary,
+    })}
   >
     {children}
   </button>
