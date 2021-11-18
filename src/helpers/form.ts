@@ -3,6 +3,7 @@ import { buildYup } from 'schema-to-yup';
 export const schemaType = {
   text: 'string',
   textarea: 'string',
+  number: 'number',
   boolean: 'boolean',
   multichoice: 'array',
 };
@@ -15,11 +16,11 @@ export const generateValidationSchema = (section: Frontier.Section) =>
 
 const generateValidationProperties = (section: Frontier.Section) =>
   section.content.reduce(
-    (accumulator, { id, type, metadata: { required, pattern } }) => {
+    (accumulator, { id, type, metadata: { required, pattern, format } }) => {
       return {
         ...accumulator,
         [id]: {
-          type: schemaType[type],
+          type: format === 'number' ? schemaType[format] : schemaType[type],
           required,
           pattern,
         },
