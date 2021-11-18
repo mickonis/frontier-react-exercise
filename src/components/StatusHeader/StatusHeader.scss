@@ -28,5 +28,6 @@
   &__progress-filler {
     background: var(--progress-bar-fill-color);
     height: var(--progress-bar-height);
+    transition: all var(--element-transition-time) ease-in-out;
   }
 }
