@@ -3,8 +3,9 @@ import Button from 'components/Button/Button';
 import Input from 'components/Input/Input';
 import Switch from 'components/Switch/Switch';
 import Textarea from 'components/Textarea/Textarea';
+import { FormContext } from 'context/FormState';
 import { generateValidationSchema } from 'helpers/form';
-import { useState } from 'react';
+import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import './Form.scss';
 
@@ -13,8 +14,8 @@ interface FormProps {
 }
 
 const Form = ({ job }: FormProps) => {
+  const { currentStep, setCurrentStep } = useContext(FormContext);
   const { sections } = job;
-  const [step, setStep] = useState(0);
 
   const {
     control,
@@ -59,7 +60,7 @@ const Form = ({ job }: FormProps) => {
     );
   };
 
-  const activeSection = sections[step];
+  const activeSection = sections[currentStep];
 
   return (
     <form className="form">
@@ -70,7 +71,7 @@ const Form = ({ job }: FormProps) => {
       <Button
         onClick={event => {
           event.preventDefault();
-          setStep(step + 1);
+          setCurrentStep(currentStep + 1);
         }}
       >
         Next
