@@ -1,7 +1,6 @@
 .button {
   cursor: pointer;
-  background: linear-gradient(#32bf62, darken(#32bf62, 10%));
-
+  background: var(--primary-color);
   border: none;
   height: var(--button-height);
   width: 100%;
@@ -10,4 +9,8 @@
   border-radius: 10px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+  transition: transform 0.3s;
+  &:hover {
+    transform: scale(1.05);
+  }
 }
