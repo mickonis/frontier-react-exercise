@@ -15,6 +15,7 @@
     top: 23px;
     margin: auto;
     border-radius: 0 0 28px 28px;
+    z-index: 100;
   }
   &__inner-layer {
     display: flex;
@@ -23,11 +24,14 @@
     width: 370px;
     height: 800px;
     border-radius: 39px;
+    overflow: hidden;
   }
   &__content {
+    position: relative;
+    flex-direction: column;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     width: 100%;
   }
 }

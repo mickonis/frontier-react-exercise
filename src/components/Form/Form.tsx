@@ -44,7 +44,7 @@ const Form = ({ job }: FormProps) => {
     const error = errors[content.id]?.message;
     console.log('error', error);
     return (
-      <div className="form-section__content" key={content.id}>
+      <div className="form__element" key={content.id}>
         {content.type === 'text' && (
           <Input content={content} control={control} error={error} />
         )}
@@ -61,23 +61,22 @@ const Form = ({ job }: FormProps) => {
   const activeSection = sections[step];
 
   return (
-    <div className="form">
+    <form className="form">
       {/* {step} */}
       <div className="form__body">
         <h3 className="form__title">{activeSection.title}</h3>
-        <form action="">
-          {renderSection(activeSection)}
-          <button
-            onClick={e => {
-              e.preventDefault();
-              setStep(step + 1);
-            }}
-          >
-            Next
-          </button>
-        </form>
+
+        {renderSection(activeSection)}
       </div>
-    </div>
+      <button
+        onClick={e => {
+          e.preventDefault();
+          setStep(step + 1);
+        }}
+      >
+        Next
+      </button>
+    </form>
   );
 };
 

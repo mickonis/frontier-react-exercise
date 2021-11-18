@@ -1,0 +1,33 @@
+.status-header {
+  background: var(--whiteColor);
+  width: 100%;
+  height: 70px;
+  margin-bottom: 20px;
+  position: relative;
+  &__step-counter {
+    background: #edeff1;
+    min-width: 84px;
+    max-width: 125px;
+    height: 23px;
+    border-radius: 12px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 13px;
+  }
+  &__progress-bar {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--progressBarColor);
+    bottom: 0;
+  }
+  &__progress-filler {
+    background: var(--progressBarFillColor);
+    height: 3px;
+  }
+}
