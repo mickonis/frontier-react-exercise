@@ -1,6 +1,7 @@
 .button {
   cursor: pointer;
-  background: linear-gradient(0deg, #32b35f 45%, #32bf62 55%);
+  background: linear-gradient(#32bf62, darken(#32bf62, 10%));
+
   border: none;
   height: var(--button-height);
   width: 100%;
