@@ -1,6 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import Input from 'components/Input/Input';
 import Switch from 'components/Switch/Switch';
+import Textarea from 'components/Textarea/Textarea';
 import { generateValidationSchema } from 'helpers/form';
 import { useState } from 'react';
 import { useForm } from 'react-hook-form';
@@ -49,6 +50,9 @@ const Form = ({ job }: FormProps) => {
         )}
         {content.type === 'boolean' && (
           <Switch content={content} control={control} error={error} />
+        )}
+        {content.type === 'textarea' && (
+          <Textarea content={content} control={control} error={error} />
         )}
       </div>
     );

@@ -1,0 +1,17 @@
+.textarea {
+  $self: &;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: var(--marginBottomField);
+  &--error {
+    #{$self}__field {
+      border-color: var(--errorColor);
+    }
+  }
+  &__field {
+    background: var(--fieldBackgroundColor);
+    min-height: var(--fieldHeight);
+    border: var(--fieldBorderSize) solid var(--fieldBorderColor);
+    border-radius: var(--fieldBorderRadius);
+  }
+}
