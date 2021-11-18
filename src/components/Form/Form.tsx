@@ -16,11 +16,11 @@ const Form = () => {
 
   const sections = formInstructions?.sections as Frontier.Section[];
   const activeSection = sections[currentStep - 1];
+  const isLastStep = currentStep >= totalSteps;
 
   const {
     control,
     handleSubmit,
-    //reset,
     watch,
     formState: { errors },
   } = useForm({
@@ -76,7 +76,12 @@ const Form = () => {
         <h3 className="form__title">{activeSection.title}</h3>
         {renderSection(activeSection)}
       </div>
-      <Button onClick={handleSubmit(onSubmit)}>Next</Button>
+      <Button
+        disabled={Object.keys(errors).length !== 0}
+        onClick={handleSubmit(onSubmit)}
+      >
+        {isLastStep ? 'Submit' : 'Next'}
+      </Button>
     </form>
   );
 };
