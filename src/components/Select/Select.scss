@@ -1,0 +1,16 @@
+.select {
+  $self: &;
+  display: flex;
+  flex-direction: column;
+  &--error {
+    #{$self}__field {
+      border-color: var(--errorColor);
+    }
+  }
+  &__field {
+    background: var(--fieldBackgroundColor);
+    height: var(--fieldHeight);
+    border: var(--fieldBorderSize) solid var(--fieldBorderColor);
+    border-radius: var(--fieldBorderRadius);
+  }
+}

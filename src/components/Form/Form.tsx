@@ -1,6 +1,7 @@
 import { yupResolver } from '@hookform/resolvers/yup';
 import Button from 'components/Button/Button';
 import Input from 'components/Input/Input';
+import Select from 'components/Select/Select';
 import Switch from 'components/Switch/Switch';
 import Textarea from 'components/Textarea/Textarea';
 import { FormContext } from 'context/FormState';
@@ -45,7 +46,6 @@ const Form = ({ job }: FormProps) => {
 
   const renderContent = (content: Frontier.Element) => {
     const error = errors[content.id]?.message;
-    console.log('error', error);
     return (
       <div className="form__element" key={content.id}>
         {content.type === 'text' && (
@@ -56,6 +56,9 @@ const Form = ({ job }: FormProps) => {
         )}
         {content.type === 'textarea' && (
           <Textarea content={content} control={control} error={error} />
+        )}
+        {content.type === 'multichoice' && (
+          <Select content={content} control={control} error={error} />
         )}
       </div>
     );
