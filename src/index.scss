@@ -3,16 +3,26 @@
 
 :root {
   //colors
-  --whiteColor: #fff;
-  --fieldBackgroundColor: #f1f4f6;
-  --fieldBorderColor: #c4cace;
-  --errorColor: #e71111;
-  --progressBarColor: #e7ebec;
-  --progressBarFillColor: #1e54fc;
+  --white-color: #fff;
+  --field-background-color: #f1f4f6;
+  --field-border-color: #c4cace;
+  --error-color: #e71111;
+  --progress-bar-color: #e7ebec;
+  --progress-bar-fill-color: #1e54fc;
+  //spacing
+  --space-unit: 16px;
+  --space-xxs: calc(0.25 * var(--space-unit)); // 4px
+  --space-xs: calc(0.5 * var(--space-unit)); // 8px
+  --space-s: calc(0.75 * var(--space-unit)); // 12px
+  --space-m: calc(1 * var(--space-unit)); // 16px
+  --space-l: calc(1.25 * var(--space-unit)); // 20px
+  --space-xl: calc(2 * var(--space-unit)); // 32px
+  --space-xxl: calc(3.25 * var(--space-unit)); // 52px
+
   //sizes
-  --fieldHeight: 43px;
-  --fieldBorderSize: 1px;
-  --fieldBorderRadius: 3px;
+  --field-height: 43px;
+  --field-border-size: 1px;
+  --field-border-radius: 3px;
   //margins
-  --marginBottomField: 25px;
+  --margin-bottom-field: 25px;
 }

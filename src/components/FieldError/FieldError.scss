@@ -1,7 +1,7 @@
 .field-error {
-  margin-top: 10px;
+  margin-top: var(--space-xxs);
   font-family: 'Open Sans', sans-serif;
   font-weight: 500;
   font-size: 14px;
-  color: var(--errorColor);
+  color: var(--error-color);
 }

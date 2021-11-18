@@ -4,13 +4,13 @@
   flex-direction: column;
   &--error {
     #{$self}__field {
-      border-color: var(--errorColor);
+      border-color: var(--error-color);
     }
   }
   &__field {
-    background: var(--fieldBackgroundColor);
-    height: var(--fieldHeight);
-    border: var(--fieldBorderSize) solid var(--fieldBorderColor);
-    border-radius: var(--fieldBorderRadius);
+    background: var(--field-background-color);
+    height: var(--field-height);
+    border: var(--field-border-size) solid var(--field-border-color);
+    border-radius: var(--field-border-radius);
   }
 }
