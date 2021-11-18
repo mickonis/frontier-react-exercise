@@ -10,16 +10,12 @@ import { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import './Form.scss';
 
-interface FormProps {
-  job?: Frontier.Job;
-}
-
-const Form = ({ job }: FormProps) => {
+const Form = () => {
   const { currentStep, totalSteps, setCurrentStep, formInstructions } =
     useContext(FormContext);
-  const sections = formInstructions?.sections as Frontier.Section[];
 
-  const activeSection = sections[currentStep];
+  const sections = formInstructions?.sections as Frontier.Section[];
+  const activeSection = sections[currentStep - 1];
 
   const {
     control,

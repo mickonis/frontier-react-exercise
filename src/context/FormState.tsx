@@ -4,7 +4,7 @@ import { FormReducer } from './FormReducer';
 
 const initialState: FormState = {
   totalSteps: 0,
-  currentStep: 0,
+  currentStep: 1,
   formInstructions: null,
   setTotalSteps: () => {},
   setCurrentStep: () => {},

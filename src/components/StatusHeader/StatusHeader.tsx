@@ -4,16 +4,16 @@ import './StatusHeader.scss';
 
 const StatusHeader = () => {
   const { currentStep, totalSteps } = useContext(FormContext);
-  const currentStepPresentation = currentStep + 1;
+
   return (
     <div className="status-header">
       <div className="status-header__step-counter">
-        Step {currentStepPresentation} of {totalSteps}
+        Step {currentStep} of {totalSteps}
       </div>
       <div className="status-header__progress-bar">
         <div
           className="status-header__progress-filler"
-          style={{ width: `${(currentStepPresentation / totalSteps) * 100}%` }}
+          style={{ width: `${(currentStep / totalSteps) * 100}%` }}
         />
       </div>
     </div>
