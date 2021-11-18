@@ -1,6 +1,33 @@
 .phone-mockup {
-  border: 1px solid;
-  padding: 10px;
-  width: 400px;
-  background: #dadfe3;
+  padding: 23px;
+  border-radius: 60px;
+  background: #fff;
+  position: relative;
+  &__notch {
+    width: 200px;
+    height: 28px;
+    background: #fff;
+    border: 1px solid #bfc6cb;
+    border-top-color: #fff;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 23px;
+    margin: auto;
+    border-radius: 0 0 28px 28px;
+  }
+  &__inner-layer {
+    display: flex;
+    background: #dadfe3;
+    border: 1px solid #bfc6cb;
+    width: 370px;
+    height: 800px;
+    border-radius: 39px;
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
 }
