@@ -9,7 +9,7 @@ const Switch = ({
   element: {
     id,
     question_text,
-    metadata: { placeholder, format, step },
+    metadata: { placeholder },
   },
   control,
   error,
@@ -19,7 +19,7 @@ const Switch = ({
     <Controller
       control={control}
       name={id}
-      render={({ field: { onChange, value } }) => (
+      render={({ field: { onChange } }) => (
         <div className="switch__container">
           <input
             name={id}

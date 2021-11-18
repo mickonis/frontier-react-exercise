@@ -25,7 +25,7 @@ const Select = ({
         return (
           <MultiSelect
             options={options as Option[]}
-            value={value ?? ([] as Option[])}
+            value={(value ?? []) as Option[]}
             onChange={onChange}
             labelledBy="Select"
             overrideStrings={{ selectSomeItems: placeholder ?? ' ' }}
