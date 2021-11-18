@@ -1,24 +1,19 @@
 import classNames from 'classnames';
 import FieldError from 'components/FieldError/FieldError';
 import Label from 'components/Label/Label';
-import { Control, Controller } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
+import { FieldProps } from 'types/form';
 import './Textarea.scss';
 
-interface TextareaProps {
-  content: Frontier.Element;
-  control: Control;
-  error?: string | null;
-}
-
 const Textarea = ({
-  content: {
+  element: {
     id,
     question_text,
     metadata: { placeholder },
   },
   control,
   error,
-}: TextareaProps) => (
+}: FieldProps) => (
   <div className={classNames('textarea', { 'textarea--error': error })}>
     <Label htmlFor={id} text={question_text} />
     <Controller

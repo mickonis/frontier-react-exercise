@@ -1,24 +1,19 @@
 import classNames from 'classnames';
 import FieldError from 'components/FieldError/FieldError';
 import Label from 'components/Label/Label';
-import { Control, Controller } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
+import { FieldProps } from 'types/form';
 import './Input.scss';
 
-interface InputProps {
-  content: Frontier.Element;
-  control: Control;
-  error?: string | null;
-}
-
 const Input = ({
-  content: {
+  element: {
     id,
     question_text,
     metadata: { placeholder, format, step },
   },
   control,
   error,
-}: InputProps) => (
+}: FieldProps) => (
   <div className={classNames('input', { 'input--error': error })}>
     <Label htmlFor={id} text={question_text} />
     <Controller
@@ -28,9 +23,9 @@ const Input = ({
         <input
           id={id}
           onChange={e => {
-            let newValue = e.target.value;
+            let newValue: number | string = e.target.value;
             if (newValue && format === 'number') {
-              return parseFloat(String(newValue));
+              newValue = parseFloat(String(newValue));
             }
             onChange(newValue);
           }}

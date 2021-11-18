@@ -4,14 +4,12 @@
   margin: 0 auto var(--space-xl);
   &__body {
     background: var(--white-color);
-    border-radius: 15px;
+    border-radius: var(--elements-radius);
     padding: var(--space-m);
     margin-bottom: var(--space-l);
   }
   &__title {
     margin: 0;
-    font-family: 'Open Sans', sans-serif;
-    font-weight: 700;
     font-size: var(--font-l);
     margin-bottom: var(--space-xl);
     color: var(--text-color);

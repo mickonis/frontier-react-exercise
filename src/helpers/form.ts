@@ -38,3 +38,6 @@ const generateValidationMessages = (section: Frontier.Section) =>
       },
     };
   }, {});
+
+export const getErrorMessageById = (errors: { [x: string]: any }, id: string) =>
+  errors[id]?.message;

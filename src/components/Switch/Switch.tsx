@@ -1,24 +1,19 @@
 import classNames from 'classnames';
 import FieldError from 'components/FieldError/FieldError';
 import Label from 'components/Label/Label';
-import { Control, Controller } from 'react-hook-form';
+import { Controller } from 'react-hook-form';
+import { FieldProps } from 'types/form';
 import './Switch.scss';
 
-interface SwitchProps {
-  content: Frontier.Element;
-  control: Control;
-  error?: string | null;
-}
-
 const Switch = ({
-  content: {
+  element: {
     id,
     question_text,
     metadata: { placeholder, format, step },
   },
   control,
   error,
-}: SwitchProps) => (
+}: FieldProps) => (
   <div className={classNames('switch', { 'switch--error': error })}>
     <Label text={question_text} />
     <Controller
