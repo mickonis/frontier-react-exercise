@@ -33,10 +33,6 @@ const Form = () => {
   console.log('errors', errors);
 
   const onSubmit = (formData: any) => {
-    //event.preventDefault();
-    console.log('currentStep', currentStep);
-    console.log('totalSteps', totalSteps);
-
     if (currentStep < totalSteps) {
       setCurrentStep(currentStep + 1);
     } else {

@@ -1,23 +1,40 @@
 import { buildYup } from 'schema-to-yup';
 
-export const schemaTypes = {
+export const schemaType = {
   text: 'string',
+  textarea: 'string',
   boolean: 'boolean',
   multichoice: 'array',
-  textarea: 'string',
 };
 
-export const generateValidationSchema = (section: Frontier.Section) => {
-  const properties = section.content.reduce((accumulator, field) => {
+export const generateValidationSchema = (section: Frontier.Section) =>
+  buildYup(
+    { type: 'object', properties: generateValidationProperties(section) },
+    { errMessages: generateValidationMessages(section) },
+  );
+
+const generateValidationProperties = (section: Frontier.Section) =>
+  section.content.reduce(
+    (accumulator, { id, type, metadata: { required, pattern } }) => {
+      return {
+        ...accumulator,
+        [id]: {
+          type: schemaType[type],
+          required,
+          pattern,
+        },
+      };
+    },
+    {},
+  );
+
+const generateValidationMessages = (section: Frontier.Section) =>
+  section.content.reduce((accumulator, { id, metadata }) => {
     return {
       ...accumulator,
-      [field.id]: {
-        required: field.metadata.required,
-        type: schemaTypes[field.type],
-        pattern: field.metadata.pattern,
+      [id]: {
+        required: `Field is required`,
+        pattern: `Must be valid ${metadata.format}`,
       },
     };
   }, {});
-
-  return buildYup({ type: 'object', properties }, {});
-};
