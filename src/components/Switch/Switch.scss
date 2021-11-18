@@ -16,15 +16,24 @@
     justify-content: center;
     align-items: center;
     font-size: var(--font-s);
+    &--left {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    &--right {
+      border-left: none;
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
   }
   &__field {
     height: 0;
     width: 0;
     &:focus + #{$self}__label {
-      background: grey;
+      background: var(--field-border-color);
     }
     &:checked + #{$self}__label {
-      background: grey;
+      background: var(--field-border-color);
     }
   }
 }

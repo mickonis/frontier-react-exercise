@@ -35,7 +35,7 @@ const Switch = ({
             type="radio"
             className="switch__field"
           />
-          <label htmlFor="yes" className="switch__label">
+          <label htmlFor="yes" className="switch__label switch__label--left">
             Yes
           </label>
           <input
@@ -47,7 +47,7 @@ const Switch = ({
             type="radio"
             className="switch__field"
           />
-          <label htmlFor="no" className="switch__label">
+          <label htmlFor="no" className="switch__label switch__label--right">
             No
           </label>
         </div>
