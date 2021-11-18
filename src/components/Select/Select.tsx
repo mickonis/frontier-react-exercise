@@ -16,7 +16,7 @@ const Select = ({
   content: {
     id,
     question_text,
-    metadata: { placeholder, format, step, options },
+    metadata: { placeholder, options },
   },
   control,
   error,
@@ -27,25 +27,15 @@ const Select = ({
       control={control}
       name={id}
       render={({ field: { onChange, value } }) => {
-        console.log('value', value);
         return (
-          <>
-            <input
-              id={id}
-              onChange={e => onChange(e.target.value)}
-              value={value}
-              placeholder={placeholder}
-              type={format}
-              step={step}
-              className="input__field"
-            />
-            <MultiSelect
-              options={options as Option[]}
-              value={value}
-              onChange={onChange}
-              labelledBy="Select"
-            />
-          </>
+          <MultiSelect
+            options={options as Option[]}
+            value={value ?? ([] as Option[])}
+            onChange={onChange}
+            labelledBy="Select"
+            overrideStrings={{ selectSomeItems: placeholder ?? '' }}
+            hasSelectAll={false}
+          />
         );
       }}
     />

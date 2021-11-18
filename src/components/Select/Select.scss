@@ -7,10 +7,15 @@
       border-color: var(--errorColor);
     }
   }
-  &__field {
-    background: var(--fieldBackgroundColor);
-    height: var(--fieldHeight);
-    border: var(--fieldBorderSize) solid var(--fieldBorderColor);
-    border-radius: var(--fieldBorderRadius);
+  .rmsc {
+    .dropdown-container {
+      background: var(--fieldBackgroundColor);
+      height: var(--fieldHeight);
+      border: var(--fieldBorderSize) solid var(--fieldBorderColor);
+      border-radius: var(--fieldBorderRadius);
+    }
+    .dropdown-heading {
+      height: 100%;
+    }
   }
 }
