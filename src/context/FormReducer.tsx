@@ -8,12 +8,17 @@ export const FormReducer = (
     case 'SET_CURRENT_STEP':
       return {
         ...state,
-        currentStep: action.payload,
+        currentStep: action.payload as number,
       };
     case 'SET_TOTAL_STEPS':
       return {
         ...state,
-        totalSteps: action.payload,
+        totalSteps: action.payload as number,
+      };
+    case 'SET_FORM_INSTRUCTIONS':
+      return {
+        ...state,
+        formInstructions: action.payload as Frontier.Job,
       };
     default:
       return state;

@@ -5,8 +5,10 @@ import { FormReducer } from './FormReducer';
 const initialState: FormState = {
   totalSteps: 0,
   currentStep: 0,
+  formInstructions: null,
   setTotalSteps: () => {},
   setCurrentStep: () => {},
+  setFormInstructions: () => {},
 };
 
 export const FormContext: Context<FormState> = createContext(initialState);
@@ -28,13 +30,22 @@ export const FormProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
+  const setFormInstructions = (formInstructions: Frontier.Job) => {
+    dispatch({
+      type: 'SET_FORM_INSTRUCTIONS',
+      payload: formInstructions,
+    });
+  };
+
   return (
     <FormContext.Provider
       value={{
         totalSteps: state.totalSteps,
         currentStep: state.currentStep,
+        formInstructions: state.formInstructions,
         setCurrentStep,
         setTotalSteps,
+        setFormInstructions,
       }}
     >
       {children}
