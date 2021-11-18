@@ -2,11 +2,6 @@
   $self: &;
   display: flex;
   flex-direction: column;
-  &--error {
-    #{$self}__field {
-      border-color: var(--error-color);
-    }
-  }
   .rmsc {
     .dropdown-container {
       background: var(--field-background-color);
@@ -19,6 +14,13 @@
     .dropdown-heading {
       cursor: pointer;
       height: 100%;
+    }
+  }
+  &--error {
+    .rmsc {
+      .dropdown-container {
+        border-color: var(--error-color);
+      }
     }
   }
 }

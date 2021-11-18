@@ -2,6 +2,11 @@
   $self: &;
   display: flex;
   flex-direction: column;
+  &--error {
+    #{$self}__label {
+      border-color: var(--error-color);
+    }
+  }
   &__container {
     display: flex;
   }
