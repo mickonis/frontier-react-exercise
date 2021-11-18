@@ -32,6 +32,7 @@ html {
   --field-border-size: 1px;
   --field-border-radius: 5px;
   --button-height: 47px;
+  --button-radius: 10px;
   --status-header-height: 67px;
   --step-counter-height: 23px;
   //colors
@@ -45,4 +46,7 @@ html {
   --app-background-color: #e3e3e3;
   //misc
   --element-transition-time: 0.2s;
+  --button-active-opacity: 0.8;
+  --button-disabled-opacity: 0.2;
+  --button-hover-scale: 1.05;
 }

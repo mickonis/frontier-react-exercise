@@ -6,12 +6,10 @@
   width: 100%;
   font-size: var(--font-xs);
   color: var(--white-color);
-  border-radius: 10px;
-  font-family: 'Open Sans', sans-serif;
-  font-weight: 400;
-  transition: all 0.3s;
+  border-radius: var(--button-radius);
+  transition: all var(--element-transition-time);
   &--disabled {
-    opacity: 0.5;
+    opacity: var(--button-disabled-opacity);
     pointer-events: none;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -21,9 +19,9 @@
     user-select: none;
   }
   &:hover {
-    transform: scale(1.05);
+    transform: scale(var(--button-hover-scale));
   }
   &:active {
-    opacity: 0.8;
+    opacity: var(--button-active-opacity);
   }
 }
