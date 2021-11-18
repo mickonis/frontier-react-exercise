@@ -38,8 +38,11 @@ html {
   --white-color: #fff;
   --field-background-color: #f1f4f6;
   --field-border-color: #c4cace;
+  --field-active-border-color: #808588;
   --error-color: #e71111;
   --progress-bar-color: #e7ebec;
   --progress-bar-fill-color: #1e54fc;
   --app-background-color: #e3e3e3;
+  //misc
+  --element-transition-time: 0.2s;
 }

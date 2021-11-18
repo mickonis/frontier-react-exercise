@@ -27,9 +27,13 @@
       border-bottom-right-radius: 0;
     }
     &--right {
-      border-left: none;
+      //border-left: none;
       border-top-left-radius: 0;
       border-bottom-left-radius: 0;
+    }
+    transition: border-color var(--element-transition-time);
+    &:hover {
+      border-color: var(--field-active-border-color);
     }
   }
   &__field {

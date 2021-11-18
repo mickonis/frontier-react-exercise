@@ -27,7 +27,13 @@ const Input = ({
       render={({ field: { onChange, value } }) => (
         <input
           id={id}
-          onChange={e => onChange(e.target.value)}
+          onChange={e => {
+            let newValue = e.target.value;
+            if (newValue && format === 'number') {
+              return parseFloat(String(newValue));
+            }
+            onChange(newValue);
+          }}
           value={value}
           placeholder={placeholder}
           type={format}

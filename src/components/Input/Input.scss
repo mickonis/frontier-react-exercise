@@ -15,5 +15,9 @@
     font-size: var(--font-s);
     padding: 0 var(--space-s);
     color: var(--text-color);
+    transition: var(--element-transition-time);
+    &:hover {
+      border-color: var(--field-active-border-color);
+    }
   }
 }
