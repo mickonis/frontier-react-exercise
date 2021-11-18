@@ -5,7 +5,9 @@ interface FieldErrorProps {
 }
 
 const FieldError = ({ text }: FieldErrorProps) => (
-  <div className="field-error">{text}</div>
+  <div data-testid="field-error" className="field-error">
+    {text}
+  </div>
 );
 
 export default FieldError;

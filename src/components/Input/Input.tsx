@@ -16,27 +16,29 @@ const Input = ({
 }: FieldProps) => (
   <div className={classNames('input', { 'input--error': error })}>
     <Label htmlFor={id} text={question_text} />
-    <Controller
-      control={control}
-      name={id}
-      render={({ field: { onChange, value } }) => (
-        <input
-          id={id}
-          onChange={e => {
-            let newValue: number | string = e.target.value;
-            if (newValue && format === 'number') {
-              newValue = parseFloat(String(newValue));
-            }
-            onChange(newValue);
-          }}
-          value={value}
-          placeholder={placeholder}
-          type={format}
-          step={step}
-          className="input__field"
-        />
-      )}
-    />
+    {control && (
+      <Controller
+        control={control}
+        name={id}
+        render={({ field: { onChange, value } }) => (
+          <input
+            id={id}
+            onChange={e => {
+              let newValue: number | string = e.target.value;
+              if (newValue && format === 'number') {
+                newValue = parseFloat(String(newValue));
+              }
+              onChange(newValue);
+            }}
+            value={value}
+            placeholder={placeholder}
+            type={format}
+            step={step}
+            className="input__field"
+          />
+        )}
+      />
+    )}
     {error && <FieldError text={error} />}
   </div>
 );
