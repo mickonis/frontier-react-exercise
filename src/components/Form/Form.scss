@@ -1,6 +1,7 @@
 .form {
   width: calc(100% - 30px);
   box-sizing: border-box;
+  margin: 0 auto 20px;
   &__body {
     background: #fff;
     border-radius: 15px;
