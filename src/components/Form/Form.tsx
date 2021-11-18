@@ -38,27 +38,27 @@ const Form = ({ job }: FormProps) => {
     return (
       <>
         <div id={section.id} className="form-section">
-          {section.content.map(content => renderContent(content))}
+          {section.content.map(element => renderFormElement(element))}
         </div>
       </>
     );
   };
 
-  const renderContent = (content: Frontier.Element) => {
-    const error = errors[content.id]?.message;
+  const renderFormElement = (element: Frontier.Element) => {
+    const error = errors[element.id]?.message;
     return (
-      <div className="form__element" key={content.id}>
-        {content.type === 'text' && (
-          <Input content={content} control={control} error={error} />
+      <div className="form__element" key={element.id}>
+        {element.type === 'text' && (
+          <Input content={element} control={control} error={error} />
         )}
-        {content.type === 'boolean' && (
-          <Switch content={content} control={control} error={error} />
+        {element.type === 'boolean' && (
+          <Switch content={element} control={control} error={error} />
         )}
-        {content.type === 'textarea' && (
-          <Textarea content={content} control={control} error={error} />
+        {element.type === 'textarea' && (
+          <Textarea content={element} control={control} error={error} />
         )}
-        {content.type === 'multichoice' && (
-          <Select content={content} control={control} error={error} />
+        {element.type === 'multichoice' && (
+          <Select content={element} control={control} error={error} />
         )}
       </div>
     );
