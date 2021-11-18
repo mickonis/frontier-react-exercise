@@ -9,7 +9,7 @@
   border-radius: 10px;
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  transition: transform 0.3s;
+  transition: all 0.3s;
   &--disabled {
     opacity: 0.5;
     pointer-events: none;
@@ -22,5 +22,8 @@
   }
   &:hover {
     transform: scale(1.05);
+  }
+  &:active {
+    opacity: 0.8;
   }
 }
