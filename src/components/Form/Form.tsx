@@ -1,4 +1,5 @@
 import { yupResolver } from '@hookform/resolvers/yup';
+import Button from 'components/Button/Button';
 import Input from 'components/Input/Input';
 import Switch from 'components/Switch/Switch';
 import Textarea from 'components/Textarea/Textarea';
@@ -62,20 +63,18 @@ const Form = ({ job }: FormProps) => {
 
   return (
     <form className="form">
-      {/* {step} */}
       <div className="form__body">
         <h3 className="form__title">{activeSection.title}</h3>
-
         {renderSection(activeSection)}
       </div>
-      <button
-        onClick={e => {
-          e.preventDefault();
+      <Button
+        onClick={event => {
+          event.preventDefault();
           setStep(step + 1);
         }}
       >
         Next
-      </button>
+      </Button>
     </form>
   );
 };
