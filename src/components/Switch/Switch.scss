@@ -38,6 +38,9 @@
   &__field {
     height: 0;
     width: 0;
+    position: fixed;
+    opacity: 0;
+    pointer-events: none;
     &:focus + #{$self}__label {
       background: var(--field-border-color);
     }
