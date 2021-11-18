@@ -2,9 +2,9 @@
   cursor: pointer;
   background: linear-gradient(0deg, #32b35f 45%, #32bf62 55%);
   border: none;
-  height: 47px;
+  height: var(--button-height);
   width: 100%;
-  font-size: 14px;
+  font-size: var(--font-xs);
   color: var(--white-color);
   border-radius: 10px;
   font-family: 'Open Sans', sans-serif;

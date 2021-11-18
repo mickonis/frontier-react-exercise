@@ -12,11 +12,11 @@
     margin: 0;
     font-family: 'Open Sans', sans-serif;
     font-weight: 700;
-    font-size: 19px;
+    font-size: var(--font-l);
     margin-bottom: var(--space-xl);
   }
   &__element {
-    margin-bottom: var(--margin-bottom-field);
+    margin-bottom: var(--space-xl);
     &:last-child {
       margin-bottom: 0;
     }
