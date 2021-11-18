@@ -33,7 +33,7 @@ const Select = ({
             value={value ?? ([] as Option[])}
             onChange={onChange}
             labelledBy="Select"
-            overrideStrings={{ selectSomeItems: placeholder ?? '' }}
+            overrideStrings={{ selectSomeItems: placeholder ?? ' ' }}
             hasSelectAll={false}
           />
         );

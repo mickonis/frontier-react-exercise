@@ -13,8 +13,10 @@
       height: var(--field-height);
       border: var(--field-border-size) solid var(--field-border-color);
       border-radius: var(--field-border-radius);
+      font-size: var(--font-s);
     }
     .dropdown-heading {
+      cursor: pointer;
       height: 100%;
     }
   }
