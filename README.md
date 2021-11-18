@@ -2,7 +2,7 @@
 
 ### Hosted app
 
-mickonis.lt/frontier-react-exercise/
+[click here to launch demo](https://mickonis.lt/frontier-react-exercise/)
 
 ### Key points:
 
