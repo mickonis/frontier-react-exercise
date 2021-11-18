@@ -1,9 +1,9 @@
 {
   "theme": {
-    "primary_color": "#623CEA",
+    "primary_color": "#32bf62",
     "secondary_color": "#E7DFC6",
-    "background_color": "#E9F1F7",
-    "text_color": "#54426B"
+    "background_color": "#dadfe3",
+    "text_color": "#202020"
   },
   "sections": [
     {
