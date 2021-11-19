@@ -2,6 +2,7 @@
   background: var(--white-color);
   width: 100%;
   height: var(--status-header-height);
+  min-height: var(--status-header-height);
   margin-bottom: var(--space-l);
   position: relative;
   &__step-counter {
