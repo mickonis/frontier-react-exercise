@@ -6,7 +6,7 @@ const StatusHeader = () => {
   const { currentStep, totalSteps } = useContext(FormContext);
 
   return (
-    <div className="status-header">
+    <header className="status-header">
       <div className="status-header__step-counter">
         Step {currentStep} of {totalSteps}
       </div>
@@ -16,7 +16,7 @@ const StatusHeader = () => {
           style={{ width: `${(currentStep / totalSteps) * 100}%` }}
         />
       </div>
-    </div>
+    </header>
   );
 };
 

@@ -37,9 +37,10 @@ const Form = () => {
       : console.log('formData', formData);
 
   const renderFormSection = (section: Frontier.Section) => (
-    <div id={section.id} className="form-section">
+    <section id={section.id} className="form-section">
+      <h3 className="form__title">{section.title}</h3>
       {section.content.map(element => renderFormElement(element))}
-    </div>
+    </section>
   );
 
   const renderFormElement = (element: Frontier.Element) => {
@@ -63,11 +64,8 @@ const Form = () => {
 
   return (
     <form className="form">
-      <div className="form__body">
-        <h3 className="form__title">{activeSection.title}</h3>
-        {renderFormSection(activeSection)}
-      </div>
-      <div className="form__buttons">
+      <main className="form__body">{renderFormSection(activeSection)}</main>
+      <nav className="form__buttons">
         {currentStep !== 1 && (
           <Button
             secondary
@@ -80,7 +78,7 @@ const Form = () => {
         <Button disabled={buttonDisabled} onClick={handleSubmit(onSubmit)}>
           {isLastStep ? 'Submit' : 'Next'}
         </Button>
-      </div>
+      </nav>
     </form>
   );
 };
