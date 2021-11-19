@@ -14,6 +14,7 @@
 - [x] Added few unit tests
 - [x] Using schema for validation
 - [x] Accurate design (~95%)
+- [x] Responsive
 - [x] Some tiny animations, transitions
 - [x] Added favicon 🚀
 
